@@ -28,7 +28,7 @@ In my stack class Implementation, I used a Python list for the internal data str
   -peek() returns the top value without having to return it.
   -is_empty() checks if the stack contains any of the values.
   -size() returns the values that are stored. 
-In my stack implementation, I utilized a Python list to store values. Creating a push() operation adds the item to the top, peek() allows you to view the top item, and while pop() removes the most recently added item. Additionally, is_empty() checks if the stack contains anything. The stack represents the activity history so in the example it would be most recent run, swim, bike, or sleep time, which is LIFO.
+In my stack implementation, I utilized a Python list to store values. Creating a push() operation adds the item to the top, peek() allows you to view the top item, and while pop() removes the most recently added item. Additionally, the is_empty() operation checks if the stack contains anything. The stack represents the activity history so in the example it would be most recent run, swim, bike, or sleep time, which is LIFO.
  
 ## Queue Implementation 
 
@@ -67,16 +67,7 @@ In my code, I tested multiple test cases, including popping and peeking from an 
 •	Remove the only item from a stack
 •	Remove the only item from a queue
 
-
 ## Discussion Board Reflection
-
-After completing the programming assignment, add this reflection to your initial discussion post in LEO.
-
-Your reflection should be approximately 150–200 words and address the following questions:
-
-1. What concepts or skills did you learn while completing this assignment?
-2. What challenges did you encounter, and how did you overcome them?
-3. Explain the differences between stacks and queues as this relates to real-world applications.
 
 In my code, I tested multiple test cases, including popping and peeking from an empty stack, as well as dequeuing and viewing the front of an empty queue. The code was crashing in these scenarios, so I added a return statement to return None and display a warning message. 
  
