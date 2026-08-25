@@ -37,7 +37,6 @@ class Stack:
         # to guard first (stack underflow).
         # Design choice: return none.
         if self.is_empty():
-            print("    [warning] pop() on an empty stack -> underflow, returning None")
             return None
         return self.items.pop()  # This removes from the TOP
 
@@ -49,7 +48,6 @@ class Stack:
         # In addition, it gives us a look at the top item and
         # the stack is unchanged.
         if self.is_empty():
-            print("    [warning] peek() on an empty stack -> nothing to view, returning None")
             return None
         return self.items[-1]
 
@@ -84,7 +82,6 @@ class Queue:
         # TODO (Student): Remove and return the value from the front of the queue.
         # Explain or improve empty-queue handling.
         if self.is_empty():
-            print("    [warning] dequeue() on an empty queue -> underflow, returning None")
             return None  # Do a return none, instead crashing on an empty queue.
         return self.items.popleft()  # This removes from the front.
 
@@ -95,7 +92,6 @@ class Queue:
         # and saves the next activity that would be processed, without
         # having to remove it.
         if self.is_empty():
-            print("    [warning] front() on an empty queue -> nothing waiting, returning None")
             return None
         return self.items[0]
 
