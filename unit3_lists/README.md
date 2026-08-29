@@ -2,7 +2,7 @@
 
 ## Overview
 
-This assignment examines insertion, deletion, and searching in Python lists.
+This assignment examines insertion, deletion, and searching in Python lists. For my code, I created a movie watchlist application to demonstrate how Python lists behave. When values are inserted, removed, and searched. The application used a list of movie dictionaries that contained the movie titles, domestic earnings, worldwide earnings, and release status. This meets the required list operations and multiple edge cases. 
 
 ## Learning Objectives
 
@@ -20,11 +20,8 @@ This assignment examines insertion, deletion, and searching in Python lists.
 5. Create a real-world scenario.
 
 ## Discussion Board Reflection
+Through this assignment, I learned about how Python lists handle insertion, deletion, and searching. I had to consider how these operations apply to everyday applications in the real world. I became more familiar with using insert() and pop() and how the location of an operation affects performance. Additionally, I discovered that searching for an item one by one is categorized as a linear search, as the program checks the elements sequentially.
 
-After completing the programming assignment, add this reflection to your initial discussion post in LEO.
+One challenge I encountered was ensuring that the deletion operations were safe when invalid indexes or empty lists were provided. I addressed this issue by adding index validation before calling pop(). Furthermore, I tested multiple edge cases to ensure the program returned the expected values without errors.
 
-Your reflection should be approximately 150–200 words and address the following questions:
-
-1. What concepts or skills did you learn while completing this assignment?
-2. What challenges did you encounter, and how did you overcome them?
-3. How do list operations impact performance in real-world applications?
+I noticed that list operations significantly impact performance in real-world applications, especially with large datasets. Inserting or deleting items near the start of an array-based list can cause many elements to shift. As a developer, it is essential to understand the performance differences between data structure
