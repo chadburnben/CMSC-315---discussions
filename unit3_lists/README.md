@@ -10,6 +10,23 @@ This assignment examines insertion, deletion, and searching in Python lists. For
 - Delete values from a list
 - Search for values in a list
 - Analyze list behavior and performance
+  
+## Implementation 
+
+For my implementation, I created three list operations: insertion, deletion, and searching. 
+
+For insertion, I used Python's insert() method and tested adding movies at the beginning, middle, and end of the movie list. After each insertion, the program displayed the original list and the updated list. 
+
+In my deletion, I used Python's pop() method and added index validation before removing it. However, the program returned the removed movie and displayed the updated list only when returning the items from the beginning, middle, and end.
+
+Now for searching, I made a linear search, which would check each movie and return the index when a movie was found. However, the program would return the index when a movie couldn't be found, and if it wasn't found, it would return -1. 
+
+Lastly, I tested several test cases, including deleting an invalid index, inserting into an empty list, deleting from an empty list, and searching an empty list. 
+
+## Real-World Scenario
+
+My real-world scenario was a movie watchlist application that allows users to add or remove movies and search for specific titles. This application would also check how well each movie performed at the box office. 
+
 
 ## Requirements
 
