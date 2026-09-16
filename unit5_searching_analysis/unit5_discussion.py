@@ -15,10 +15,10 @@ and program output.
 
 REAL-WORLD SCENARIO:
 For my real-world scenario, I created a list of U.S. states that I have visited. 
-This list works like a contact list where it searches one name and then decides 
+This list works like a contact list where it searches for one name and then decides 
 whether it is already there. The linear search walks the list from the top, and 
-the binary search works when the list is sorted from A-Z. The binary list will 
-the cut the remaining names in half for every comparison. 
+the binary search works when the list is sorted from A-Z. The binary search will 
+cut the remaining names in half for every comparison. 
 """
 
 import time
@@ -76,10 +76,10 @@ def linear_search(lst, target):
     - Add comments explaining why linear search
       has O(n) time complexity.
     """
-    # The linear search starts on index 0 and will check each element at a time
+    # The linear search starts at index 0 and will check each element at a time
     # until it finds the target.
-    # This also explains the time complexity directly next the code.
-    # The linear search will check every item of the list in the worst case: target
+    # This also explains the time complexity directly next to the code.
+    # The linear search will check every item of the list in the worst case: the target
     # is last or missing -> n comparisons.
     # The Best case finds the target first and 1 comparison -> 0(n).
     # The average case will also grow with n, allowing the time complexity to be 0(n).
@@ -105,19 +105,19 @@ def binary_search(lst, target):
     - Add comments explaining how each iteration
       reduces the search space.
     """
-    # The binary search has a window low, and high over a sorted list.
+    # The binary search has a window low and high over a sorted list.
     # Every loop will pick the midpoint and throw away half the window:
     #   target < mid-value  -> search left half (high = mid - 1)
     #   target > mid-value  -> search right half (low  = mid + 1).
-    # When the k steps the window, the window is about n / 2^k items.
+    # After k steps, the window is about n / 2^k items.
     # This will finish in O(log n) comparisons.
-    # When the list is sorted properly the process will work smoothly.
+    # When the list is sorted properly, the process will work smoothly.
     low = 0
     high = len(lst) - 1
 
-    # Elif: the is too large so each name after the mid will also be too large.
+    # Elif: the mid is too large, so each name after the mid will also be too large.
     # Else: is the opposite if the mid is too small, then every name before the mid will
-    # be too small and discard the left half instead of the right.
+    # be too small, and discard the left half instead of the right.
     while low <= high:
         mid = (low + high) // 2
         if lst[mid] == target:
@@ -219,12 +219,12 @@ def main():
     large_data.sort()
     print(f"Large dataset created: n = {large_n:,} sorted state labels")
 
-    # This value is guaranteed to exist and is selected near the middle making
+    # This value is guaranteed to exist and is selected near the middle, making
     # a linear search travel through a large portion of the list.
     exists_large = large_data[large_n // 2]
     missing_large = "ZZZ Not A State 999999"
     print(f"\nSearch for existing label '{exists_large}':")
-    # The linear reach will walk toward the middle / end and inspects a large portion
+    # The linear search will walk toward the middle/end and inspect a large portion
     # of this list.
     # The binary search will repeatedly cut the search in half about log2(200000)
     # ≈ 18 comparisons.
@@ -239,7 +239,7 @@ def main():
 
     print(f"\nSearch for missing label '{missing_large}':")
     # Linear search will scan the entire list before returning -1, so
-    # in this case it will can 200,000 items.
+    # in this case it will scan 200,000 items.
     # Binary search will finish in about 18 steps and cut the search in half
     run_search("Linear search", linear_search, large_data, missing_large)
     run_search("Binary search", binary_search, large_data, missing_large)
