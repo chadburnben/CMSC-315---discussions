@@ -2,7 +2,7 @@
 
 ## Overview
 
-This assignment compares Bubble Sort and Merge Sort.
+This assignment compares Bubble Sort and Merge Sort. The assignment compares Bubble Sort and Merge Sort by running multiple datasets and testing each edge case. This runs a Rotten Tomatoes score catalog and then sorts the titles by their respective scores from (1-100), which the score keeps the original relative order.
 
 ## Learning Objectives
 
