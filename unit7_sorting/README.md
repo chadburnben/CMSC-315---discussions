@@ -21,10 +21,8 @@ This assignment compares Bubble Sort and Merge Sort.
 
 ## Discussion Board Reflection
 
-After completing the programming assignment, add this reflection to your initial discussion post in LEO.
+For my assignment, I aimed to implement code that functions similarly to Rotten Tomatoes, specifically for a sort-by-score page. During this process, I learned how design influences algorithm complexity. For instance, I discovered that writing a Bubble Sort results in a time complexity of O(n²) due to its nested loops.  
 
-Your reflection should be approximately 150–200 words and address the following questions:
+One challenge I encountered was keeping the Merge Sort stable while ensuring that the original caller list was not mutated. To address this, I copied the input. I utilized the less-than-or-equal-to operator (<=) in the merge function so that two films with the same score of 87% would remain in their catalog order. I printed the original list after sorting to confirm it remained unchanged. Another challenge was figuring out how to properly divide and then merge the lists in the Merge Sort process. To better understand the problem, I worked with smaller datasets and checked each step of the merging process, ensuring that my code functioned correctly with an unsorted list. 
 
-1. What concepts or skills did you learn while completing this assignment?
-2. What challenges did you encounter, and how did you overcome them?
-3. Compare and constrast each sorting algorithm based on efficiency differences, tradeoffs made, and when to each.
+In a real-world scenario, I chose to implement a sort-by-score feature like Rotten Tomatoes because I enjoy movies. This functionality will order movie titles by Tomatometer score while preserving their original order when multiple films share the same percentage. The system will handle searches with both single results and those involving a 500-title browse page. The Merge Sort will effectively manage all cases, while the Bubble Sort will be suitable for tiny, nearly sorted lists. 
