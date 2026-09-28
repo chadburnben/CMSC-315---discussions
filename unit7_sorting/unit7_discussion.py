@@ -244,7 +244,7 @@ def main():
     print("Merge Sort:", merge_sort(duplicates))
 
     # ===============================
-    # Added a PERFORMANCE ANALYSIS
+    # ADDED A PERFORMANCE ANALYSIS
     # ===============================
 
     print("\n=== PERFORMANCE ANALYSIS ===")
