@@ -31,13 +31,13 @@ def main():
     #I created an empty dictionary to use as my Tagalog dictionary.
     # I created an empty dictionary that will be used for my Tagalog dictionary.
     # The English word will be the key and the Tagalog translation will be the value.
-    # In python the dictionaries behave similarly to a hash table because the key gets
-    # hashed for determining where the key value gets stored.
+    # In Python, dictionaries behave similarly to a hash table because the key gets
+    # hashed to determine where the key's value gets stored.
     # The Python code can find values quickly without having to look at every value.
 
     tagalog_dict = {"hello": "kamusta", "water": "tubig", "food": "pagkain", "house": "bahay", "aso": "dog"}
 
-    # For my dictionary I added five English words for an example
+    # For my dictionary, I added five English words as an example
 
     print("\n=== INSERT OPERATIONS ===")
     print("Tagalog dictionary after inserting five words:")
@@ -58,7 +58,7 @@ def main():
     #
     # The dictionary lookup will use a key to find the associated value.
     # Python will hash the key and use that information to find the value.
-    # This is a more efficient way to narrow down search.
+    # This is a more efficient way to narrow down the search.
     print("hello ->", tagalog_dict["hello"])
     print("water ->", tagalog_dict["water"])
 
@@ -77,8 +77,8 @@ def main():
     print(tagalog_dict)
 
     # It's important to assign a new value to an existing value because the
-    # existing key updates the keys value.
-    # For instance the key 'food' stays in the dictionary, however the translation
+    # existing key updates the key's value.
+    # For instance, the key 'food' stays in the dictionary; however, the translation
     # is changed.
     tagalog_dict["food"] = "pagkain / pagkain na kinakain"
 
@@ -99,7 +99,7 @@ def main():
     print(tagalog_dict)
 
     # The del statement will remove the key and the associated value.
-    # Now after deleting the word key "house," is no long in the dictionary.
+    # Now, after deleting the word key "house," it is no longer in the dictionary.
     del tagalog_dict["house"]
 
     print("Dictionary after deleting 'house':")
@@ -122,8 +122,8 @@ def main():
     print("\n=== EDGE CASES ===")
 
     # For edge case 1, it looks up a key that doesn't exist.
-    # Its helps to use get() to check for a missing key without causing key error,
-    # and if the key is missing it will return None.
+    # It helps to use get() to check for a missing key without causing key error,
+    # and if the key is missing, it will return None.
     missing_word = tagalog_dict.get("school")
 
     if missing_word is None:
@@ -132,14 +132,14 @@ def main():
         print("school ->", missing_word)
 
     # For edge case 2, when trying to delete a key that doesn't exist, using
-    # 'in' operator first prevents a KeyError form happening.
+    # 'in' operator first prevents a KeyError from happening.
     if "school" in tagalog_dict:
         del tagalog_dict["school"]
         print("Deleted 'school' from the dictionary.")
     else:
         print("Delete for 'school': Word was not found, so nothing was deleted.")
 
-    # For edge case 2,when updating a key that doesn't exist, assign a value
+    # For edge case 2, when updating a key that doesn't exist, assigning a value
     # to a new key does not cause an error.
     # Python will add the new key-value pair to the dictionary.
     tagalog_dict["school"] = "paaralan"
