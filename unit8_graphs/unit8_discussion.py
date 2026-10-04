@@ -29,8 +29,8 @@ def bfs(graph, start):
     - Why neighbors are added to the queue.
     - How BFS differs from depth-first traversal.
     """
-    # For the missing start node nothing is reachd, therefore a return an
-    # empty order, which keeps the caller from crashing incorrect input.
+    # For the missing start node, nothing is reachd, therefore a return an
+    # empty order, which keeps the caller from crashing on incorrect input.
     if start not in graph:
         return []
 
@@ -39,7 +39,7 @@ def bfs(graph, start):
 
     # There is a queue FIFO that is required so the BFS finishes the current level
     # before continuing the next one. The first place that is found is the
-    # place expanded and a stack reverses that and instead produces a depth first behavior..
+    # place expanded, and a stack reverses that and instead produces a depth-first behavior.
     queue = deque([start])
     visited.add(start)
 
@@ -49,8 +49,8 @@ def bfs(graph, start):
         node = queue.popleft()
         order.append(node)
 
-        # The Neighbors are enqueued and arent visited imediately, so they wait
-        # behind every place at this level. It then marks if they visited at enqueue
+        # The Neighbors are enqueued and aren't visited immediately, so they wait
+        # behind every place at this level. It then marks if they were visited at enqueue
         # time and ensures that the same place is stopped from being added twice when
         # multiple roads or routes lead to it.
         for neighbor in graph[node]:
@@ -58,15 +58,14 @@ def bfs(graph, start):
                 visited.add(neighbor)
                 queue.append(neighbor)
 
-    # The BFS is different from DFS due to it expanding outward just one hop at a time.
+    # The BFS is different from DFS because it expands outward just one hop at a time.
     # While DFS follows one road to a dead end before it backtracks.
-    # This means the BFS discovers the least amount of hops in a anweighted graph and
+    # This means the BFS discovers the least amount of hops in an unweighted graph, and
     # DFS doesn't.
     return order
 
 
 def add_undirected_edge(graph, a, b):
-    """Connect a and b in both directions. Creates a place if it is new."""
     if a not in graph:
         graph[a] = []
     if b not in graph:
@@ -78,7 +77,7 @@ def add_undirected_edge(graph, a, b):
 
 
 def display_graph(graph):
-    """Print the adjacency list so the structure is visible before traversal."""
+    """ This does a print of the adjacency list, which allows the structure to be visible before traversal."""
     for node in graph:
         neighbors = ", ".join(graph[node]) if graph[node] else "(no connections)"
         print(f"  {node} -> {neighbors}")
@@ -100,14 +99,14 @@ def main():
 
     print("\n=== GRAPH STRUCTURE ===")
 
-    # For my real-world graph I created a road-trip map of places in or near the
-    # state Maryland, Virginia, West Virginia, and Utah. Every node represents a
-    # place and each edge is a direct drive or one cross-country flight.
+    # For my real-world graph, I created a road-trip map of places in or near the
+    # states of Maryland, Virginia, West Virginia, and Utah. Every node represents a
+    # place, and each edge is a direct drive or one cross-country flight.
     #
-    # I have a mid-alantic cluster: Pasadena, Annapolis (Naval Academy),
-    # the Washington Monument, and Harper's Ferry. A Utah clustercluster: Ogden,
+    # I have a mid-Atlantic cluster: Pasadena, Annapolis (Naval Academy),
+    # the Washington Monument, and Harper's Ferry. A Utah cluster: Ogden,
     # Bluffdale, Provo, Orem, then national parks such as Goblin Valley, Escalante,
-    # and Zion. Lastly a One flight, Wash
+    # and Zion. 
     graph = {
         "Pasadena": ["Annapolis", "Washington Monument"],
         "Annapolis": ["Pasadena", "Washington Monument"],
@@ -144,9 +143,9 @@ def main():
     print(f"Start: {start}")
     print(f"Visit order: {' -> '.join(order)}")
 
-    # There is a leve-by-level view of the same run and Level 0 is home.
+    # There is a level-by-level view of the same run, and Level 0 is home.
     # Now every later level will be just one hop more away. Furthermore,
-    # BFS will emit a whole level before any place on the next level and whn
+    # BFS will emit a whole level before any place on the next level and when
     # ordering a level inside a level will follow the adjacency-list order.
     print("Level 0: Pasadena")
     print("Level 1: Annapolis, Washington Monument")
@@ -156,7 +155,7 @@ def main():
     print("Level 5: Escalante, Zion")
     print("Local Maryland stops are finished before the Utah parks.")
 
-    # Bryce Canyon is added and it will be reached from Escalante then rerun.
+    # Bryce Canyon is added, and it will be reached from Escalante then rerun.
     # This will most likely land on level 6, due to there only being one path that
     # goes through Escalante.
     print("\nAdded node 'Bryce Canyon' and edge Escalante -- Bryce Canyon.")
@@ -183,7 +182,7 @@ def main():
 
     print("\n=== EDGE CASE TESTS ===")
 
-    # 1st edge cases starts from a different place but has the same connected component
+    # 1st edge case starts from a different place but has the same connected component
     # and the levels will be measured from Zion. This allows the Utah park to come first
     # Maryland will be last.
     other = bfs(graph, "Zion")
@@ -191,7 +190,7 @@ def main():
     print(f"   Visit order: {' -> '.join(other)}")
     print("   Zion is level 0. Escalante and Goblin Valley are level 1.")
 
-    # 2nd edge case is disconnected graph and Antietam doesn't have a road on this map.
+    # 2nd edge case is a disconnected graph, and Antietam doesn't have a road on this map.
     # This means that a search from Pasadena won't reach it and the BFS will return the
     # component to the start.
     graph["Antietam"] = []
@@ -210,7 +209,7 @@ def main():
     print(f"   Result: {missing}")
     print("   The start is not in the adjacency list, so the search stops.")
 
-    # 4th edge case is a single node graph.
+    # 4th edge case is a single-node graph.
     single = {"Solo": []}
     print("4) Single-node graph:")
     print(f"   Result: {bfs(single, 'Solo')}")
